@@ -56,7 +56,8 @@ public static class DependencyInjectionExtension
     private static void AddTokens(IServiceCollection services, IConfiguration configuration)
     {
         var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpirationTimeMinutes");
-        var signingKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+        var signingKey = configuration.GetValue<string>("Settings:Jwt:SigninKey");
+
         services.AddScoped<IAccessTokenGenerator>(option => new JwtTokenGenerator(expirationTimeMinutes, signingKey!));
         services.AddScoped<IAccessTokenValidator>(option => new JwtTokenValidator(signingKey!));
     }

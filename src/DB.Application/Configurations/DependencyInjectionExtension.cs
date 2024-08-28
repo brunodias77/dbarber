@@ -1,6 +1,7 @@
 using DB.Application.Communications.Requests.Appointments;
 using DB.Application.Services.Mapper;
 using DB.Application.UseCases.Appointments.Create;
+using DB.Application.UseCases.Users.Create;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,11 +18,11 @@ public static class DependencyInjectionExtension
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<ICreateAppointmentUseCase, CreateAppointmentUseCase>();
+        services.AddScoped<ICreateUserUseCase, CreateUserUseCase>();
 
     }
     private static void AddMapper(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(MappingProfile));
     }
-
 }
