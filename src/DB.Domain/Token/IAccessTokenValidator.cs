@@ -1,6 +1,7 @@
 namespace DB.Domain.Token;
 
-public class IAccessTokenValidator
+public interface IAccessTokenValidator
 {
-    
+    public Guid ValidateAndGetUserIdentifier(string token);
+
 }

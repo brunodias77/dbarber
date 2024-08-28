@@ -6,4 +6,20 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="FluentValidation" Version="11.9.2" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Communications\Resposes\Appointments\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DB.Exceptions\DB.Exceptions.csproj" />
+      <ProjectReference Include="..\DB.Domain\DB.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

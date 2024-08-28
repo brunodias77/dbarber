@@ -12,7 +12,21 @@ public class User : BaseEntity
     [Column("Email")]
     private string Email;
     [Column("Password")]
-    private string password;
+    private string Password;
     [Column("Avatar")]
-    private string? avatar;
+    private string? Avatar;
+
+    public User(string firstName, string lastName, string email, string password, string? avatar = null)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Email = email;
+        Password = password;
+        Avatar = avatar;
+    }
+
+    public string GetFullName()
+    {
+        return $"{FirstName} {LastName}";
+    }
 }

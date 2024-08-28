@@ -1,13 +1,19 @@
+using DB.Application.Communications.Requests.Users;
+using DB.Application.Communications.Resposes.Users;
+using DB.Application.UseCases.Users.Create;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DB.Api.Controllers;
 
-[Microsoft.AspNetCore.Components.Route("users")]
+[Route("users")]
 public class UserController : MainController
 {
-    [HttpGet]
-    public async Task<IActionResult> Teste()
+    [HttpPost("create")]
+    [ProducesResponseType(typeof(CreateUserResponseJson), StatusCodes.Status201Created)]
+    public async Task<IActionResult> Create([FromServices] ICreateUserUseCase createUserUseCase, [FromBody] CreateUserRequestJson request)
     {
-        return Ok("Ok Google");
+        var response = await createUserUseCase.Execute(request);
+        return Created(string.Empty, response);
     }
+
 }

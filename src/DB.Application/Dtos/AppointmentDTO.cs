@@ -1,6 +1,9 @@
 namespace DB.Application.Dtos;
 
-public class AppointmentDTO
-{
-    
-}
+public record AppointmentDTO(
+    Guid ProviderId,
+    Guid UserId,
+    DateTime Date,
+    string ProviderName,
+    string UserName
+);

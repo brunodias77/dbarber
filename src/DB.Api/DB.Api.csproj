@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DB.Application\DB.Application.csproj" />
+      <ProjectReference Include="..\DB.Exceptions\DB.Exceptions.csproj" />
       <ProjectReference Include="..\DB.Infrastructure\DB.Infrastructure.csproj" />
     </ItemGroup>
 
